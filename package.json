@@ -6,9 +6,11 @@
   "author": "Parinya Onsuwan <parinya.ons@gmail.com>",
   "license": "MIT",
   "scripts": {
-	"dev": "node server.js"
+    "dev": "node server.js"
   },
   "dependencies": {
+    "axios": "^0.19.0",
+    "dotenv": "^8.0.0",
     "fastify": "^2.6.0"
   }
 }
