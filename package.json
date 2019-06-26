@@ -1,0 +1,14 @@
+{
+  "name": "sandbox-endpoint",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/Ohjky/sandbox-endpoint.git",
+  "author": "Parinya Onsuwan <parinya.ons@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+	"dev": "node server.js"
+  },
+  "dependencies": {
+    "fastify": "^2.6.0"
+  }
+}
