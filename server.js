@@ -5,14 +5,8 @@ const authenticator = require('./plugin/authenticator')
 
 fastify.register(fp(authenticator))
 fastify.register(require('./modules/scb/route'), { prefix: '/api' })
+fastify.register(require('./modules/auth/route'), { prefix: '/api' })
 
-const start = async () => {
-	try {
-		await fastify.listen(3000)
-		fastify.log.info(`server listening on ${fastify.server.address().port}`)
-	} catch (err) {
-		fastify.log.error(err)
-		process.exit(1)
-	}
-}
-start()
+fastify
+.listen(3000)
+.then((address) => console.log(`server listening on ${address}`))

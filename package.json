@@ -6,7 +6,7 @@
   "author": "Parinya Onsuwan <parinya.ons@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "dev": "node server.js"
+    "dev": "nodemon --inspect server.js"
   },
   "dependencies": {
     "axios": "^0.19.0",
@@ -14,5 +14,8 @@
     "fastify": "^2.6.0",
     "fastify-jwt": "^1.0.0",
     "fastify-plugin": "^1.6.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.1"
   }
 }

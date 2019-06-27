@@ -1,23 +1,19 @@
 const JWT = require('fastify-jwt')
-const authenticator = fastify => {
+const authenticator = async fastify => {
 	fastify
 		.register(JWT, {
 			secret: process.env.JWT_SECRET
 		})
-		.decorate('requireAuthentication', async = (req, reply) => {
+		.decorate('requireAuthentication', async (req, reply) => {
 			try {
-				await request.jwtVerify()
+				await req.jwtVerify()
 			} catch (err) {
 				reply.send(err)
 			}
 		})
-		.decorate('attachAthorize', async = (req, reply, next) => {
-			try {
-				if (request.headers.authorization)
-					await request.jwtVerify()
-			} catch (err) {
-				next()
-			}
+		.decorate('attachAthorize', async (req, reply) => {
+			if (req.headers.authorization)
+				await req.jwtVerify()
 		})
 }
 
