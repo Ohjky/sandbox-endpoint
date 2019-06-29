@@ -2,7 +2,10 @@ const JWT = require('fastify-jwt')
 const authenticator = async fastify => {
 	fastify
 		.register(JWT, {
-			secret: process.env.JWT_SECRET
+			secret: process.env.JWT_SECRET,
+			sign: {
+				expiresIn: process.env.JWT_EXPIRES_IN
+			}
 		})
 		.decorate('requireAuthentication', async (req, reply) => {
 			try {
