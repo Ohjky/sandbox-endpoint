@@ -5,7 +5,7 @@ const authenticator = require('./plugin/authenticator')
 const errorHandler = require('./plugin/errorHandler')
 fastify
 	.register(fp(authenticator))
-	.register(require('./modules/scb/route'), { prefix: '/api' })
+	.register(require('./modules/scb/route'), { prefix: '/api/scb' })
 	.register(require('./modules/auth/route'), { prefix: '/api' })
 	.setErrorHandler(errorHandler)
 	.listen(3000)
