@@ -10,4 +10,3 @@ RUN yarn install
 
 COPY . /app
 CMD ["yarn", "dev"]
-EXPOSE 4000

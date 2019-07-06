@@ -11,7 +11,7 @@ fastify
 	.register(require('./modules/scb/route'), { prefix: '/api/scb' })
 	.register(require('./modules/auth/route'), { prefix: '/api' })
 	.setErrorHandler(errorHandler)
-	.listen(process.env.PORT)
+	.listen(process.env.PORT, '0.0.0.0')
 	.then((address) => console.log(`server listening on ${address}`))
 	.catch(err => {
 		console.log(`Error starting server: ${err}`)
